@@ -1,0 +1,249 @@
+{
+  "transactions": [
+    {
+      "id": "tx-1788967489028-iel6h",
+      "type": "expense",
+      "amount": 45.9,
+      "description": "almoço no shopping",
+      "category": "Alimentação",
+      "paymentMethod": "other",
+      "date": "2026-09-09T15:24:49.027Z",
+      "source": "whatsapp",
+      "whatsappSender": "5511999998888"
+    },
+    {
+      "id": "tx-1",
+      "type": "income",
+      "amount": 6500,
+      "description": "Salário Mensal",
+      "category": "Salário & Renda",
+      "paymentMethod": "transfer",
+      "date": "2026-09-05T10:00:00.000Z",
+      "source": "manual"
+    },
+    {
+      "id": "tx-2",
+      "type": "expense",
+      "amount": 1850,
+      "description": "Aluguel do Apartamento",
+      "category": "Moradia & Contas",
+      "paymentMethod": "pix",
+      "date": "2026-09-06T14:30:00.000Z",
+      "source": "manual"
+    },
+    {
+      "id": "tx-3",
+      "type": "expense",
+      "amount": 420.5,
+      "description": "Supermercado Mensal",
+      "category": "Alimentação",
+      "paymentMethod": "credit_card",
+      "date": "2026-09-07T18:45:00.000Z",
+      "source": "whatsapp",
+      "whatsappSender": "Você (+55 11 99999-8888)"
+    },
+    {
+      "id": "tx-4",
+      "type": "expense",
+      "amount": 68.9,
+      "description": "Combustível Posto Ipiranga",
+      "category": "Transporte",
+      "paymentMethod": "debit_card",
+      "date": "2026-09-08T11:20:00.000Z",
+      "source": "whatsapp",
+      "whatsappSender": "Você (+55 11 99999-8888)"
+    },
+    {
+      "id": "tx-5",
+      "type": "expense",
+      "amount": 125,
+      "description": "Jantar Restaurante Italiano",
+      "category": "Lazer & Restaurantes",
+      "paymentMethod": "credit_card",
+      "date": "2026-09-08T21:10:00.000Z",
+      "source": "whatsapp",
+      "whatsappSender": "Você (+55 11 99999-8888)"
+    },
+    {
+      "id": "tx-6",
+      "type": "expense",
+      "amount": 55.9,
+      "description": "Netflix + Spotify",
+      "category": "Assinaturas & Tech",
+      "paymentMethod": "credit_card",
+      "date": "2026-09-09T08:00:00.000Z",
+      "source": "manual"
+    },
+    {
+      "id": "tx-7",
+      "type": "expense",
+      "amount": 140,
+      "description": "Farmácia Medicamentos",
+      "category": "Saúde & Bem-Estar",
+      "paymentMethod": "pix",
+      "date": "2026-09-09T16:15:00.000Z",
+      "source": "whatsapp",
+      "whatsappSender": "Você (+55 11 99999-8888)"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "Alimentação",
+      "icon": "UtensilsCrossed",
+      "color": "#f97316",
+      "monthlyBudget": 1200
+    },
+    {
+      "id": "cat-2",
+      "name": "Moradia & Contas",
+      "icon": "Home",
+      "color": "#3b82f6",
+      "monthlyBudget": 2200
+    },
+    {
+      "id": "cat-3",
+      "name": "Transporte",
+      "icon": "Car",
+      "color": "#8b5cf6",
+      "monthlyBudget": 650
+    },
+    {
+      "id": "cat-4",
+      "name": "Lazer & Restaurantes",
+      "icon": "Smile",
+      "color": "#ec4899",
+      "monthlyBudget": 500
+    },
+    {
+      "id": "cat-5",
+      "name": "Saúde & Bem-Estar",
+      "icon": "HeartPulse",
+      "color": "#10b981",
+      "monthlyBudget": 400
+    },
+    {
+      "id": "cat-6",
+      "name": "Educação & Cursos",
+      "icon": "GraduationCap",
+      "color": "#06b6d4",
+      "monthlyBudget": 350
+    },
+    {
+      "id": "cat-7",
+      "name": "Assinaturas & Tech",
+      "icon": "Tv",
+      "color": "#eab308",
+      "monthlyBudget": 200
+    },
+    {
+      "id": "cat-8",
+      "name": "Salário & Renda",
+      "icon": "Briefcase",
+      "color": "#22c55e",
+      "monthlyBudget": 0
+    },
+    {
+      "id": "cat-9",
+      "name": "Outros",
+      "icon": "HelpCircle",
+      "color": "#64748b",
+      "monthlyBudget": 300
+    }
+  ],
+  "settings": {
+    "botName": "FinAssist WhatsApp",
+    "commandPrefix": ".",
+    "autoMonthlyReport": true,
+    "reportDayOfMonth": 28,
+    "reportTime": "09:00",
+    "targetWhatsAppNumber": "5511999998888",
+    "enableAiParsing": true,
+    "currencySymbol": "R$"
+  },
+  "logs": [
+    {
+      "id": "log-1788968035302-cpwn",
+      "timestamp": "2026-09-09T15:33:55.302Z",
+      "direction": "outgoing",
+      "from": "FinAssist Bot",
+      "to": "5511999998888",
+      "text": "╭━━━ 📊 *FINASSIST WHATSAPP* ━━━╮\n│ Olá! Sou seu assistente de finanças.\n│ Registre gastos, consulte saldos e relatórios\n│ direto no seu WhatsApp!\n╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯\n\n📝 *COMANDOS DISPONÍVEIS:*\n\n💸 *.gasto <valor> <descrição>*\n   Registra uma despesa.\n   _Ex: .gasto 45.90 almoço no shopping_\n\n💰 *.receita <valor> <descrição>*\n   Registra um ganho ou salário.\n   _Ex: .receita 2500 salário mensal_\n\n📊 *.saldo*\n   Exibe receitas, despesas e saldo líquido do mês.\n\n📑 *.extrato* [qtd]\n   Lista os lançamentos recentes (padrão: 5).\n   _Ex: .extrato 10_\n\n📈 *.relatorio* [mês]\n   Gera o relatório mensal completo com análise por categoria.\n   _Ex: .relatorio_\n\n🎯 *.meta* ou *.orcamento*\n   Status dos seus limites e orçamentos definidos.\n\n🏷️ *.categorias*\n   Lista todas as categorias disponíveis.\n\n↩️ *.apagar*\n   Desfaz o último lançamento registrado.\n\n────────────────────────────\n🤖 *INTELIGÊNCIA ARTIFICIAL ATIVA:*\nVocê também pode falar naturalmente em mensagem de texto:\n• _\"Gastei 32 reais no Uber hoje no cartão\"_\n• _\"Almoço 28 no débito\"_\n• _\"Recebi 400 do freela no pix\"_\n\nO assistente reconhece o valor e categoria automaticamente!",
+      "commandDetected": ".menu"
+    },
+    {
+      "id": "log-1788968035301-g21y",
+      "timestamp": "2026-09-09T15:33:55.301Z",
+      "direction": "incoming",
+      "from": "5511999998888",
+      "to": "FinAssist Bot",
+      "text": ".menu",
+      "senderName": "Você"
+    },
+    {
+      "id": "log-1788967491193-uxay",
+      "timestamp": "2026-09-09T15:24:51.193Z",
+      "direction": "outgoing",
+      "from": "FinAssist Bot",
+      "to": "5511999998888",
+      "text": "╭━━━ 📊 *RELATÓRIO FINANCEIRO* ━━━╮\n│ 🗓️ *Mês de Referência:* Setembro de 2026\n│ 🕒 Gerado em: 09/09/2026\n╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯\n\n💰 *RESUMO GERAL:*\n🔹 *Receitas:* R$ 6.500,00\n🔻 *Despesas:* R$ 2.706,20\n💵 *Saldo Líquido:* R$ 3.793,80\n📈 *Taxa de Poupança:* 58.4%\n\n🏷️ *GASTOS POR CATEGORIA:*\n⚠️ *Moradia & Contas*\n   R$ 1.850,00 / R$ 2.200,00 (84%)\n   [███████░]\n✅ *Alimentação*\n   R$ 466,40 / R$ 1.200,00 (39%)\n   [███░░░░░]\n✅ *Saúde & Bem-Estar*\n   R$ 140,00 / R$ 400,00 (35%)\n   [███░░░░░]\n✅ *Lazer & Restaurantes*\n   R$ 125,00 / R$ 500,00 (25%)\n   [██░░░░░░]\n✅ *Transporte*\n   R$ 68,90 / R$ 650,00 (11%)\n   [█░░░░░░░]\n✅ *Assinaturas & Tech*\n   R$ 55,90 / R$ 200,00 (28%)\n   [██░░░░░░]\n\n🔝 *MAIORES DESPESAS DO MÊS:*\n1. *Aluguel do Apartamento* - R$ 1.850,00 (Moradia & Contas)\n2. *Supermercado Mensal* - R$ 420,50 (Alimentação)\n3. *Farmácia Medicamentos* - R$ 140,00 (Saúde & Bem-Estar)\n\n💡 *DICA DO ASSISTENTE:*\n_Parabéns! Sua taxa de economia está excelente neste mês (58.4%). Considere destinar o excedente para sua reserva de emergência ou investimentos._\n\n━━━━━━━━━━━━━━━━━━━━━━\n💬 _Digite *.menu* para ver mais comandos._",
+      "commandDetected": ".relatorio"
+    },
+    {
+      "id": "log-1788967491191-ktfz",
+      "timestamp": "2026-09-09T15:24:51.191Z",
+      "direction": "incoming",
+      "from": "5511999998888",
+      "to": "FinAssist Bot",
+      "text": ".relatorio",
+      "senderName": "Você"
+    },
+    {
+      "id": "log-1788967489036-rb5r",
+      "timestamp": "2026-09-09T15:24:49.036Z",
+      "direction": "outgoing",
+      "from": "FinAssist Bot",
+      "to": "5511999998888",
+      "text": "✅ *Gasto Registrado com Sucesso!*\n\n📝 *Descrição:* almoço no shopping\n💸 *Valor:* R$ 45,90\n🏷️ *Categoria:* Alimentação\n🕒 *Hora:* 15:24\n\n📊 *Orçamento de Alimentação:*\nTotal gasto no mês: R$ 466,40 / R$ 1.200,00 (39%)\n[███░░░░░]\n✅ *Dentro da meta*\n\n💬 _Envie *.saldo* para conferir seu saldo atual._",
+      "commandDetected": ".gasto",
+      "transactionCreated": {
+        "id": "tx-1788967489028-iel6h",
+        "type": "expense",
+        "amount": 45.9,
+        "description": "almoço no shopping",
+        "category": "Alimentação",
+        "paymentMethod": "other",
+        "date": "2026-09-09T15:24:49.027Z",
+        "source": "whatsapp",
+        "whatsappSender": "5511999998888"
+      }
+    },
+    {
+      "id": "log-1788967489026-jypv",
+      "timestamp": "2026-09-09T15:24:49.026Z",
+      "direction": "incoming",
+      "from": "5511999998888",
+      "to": "FinAssist Bot",
+      "text": ".gasto 45.90 almoço no shopping",
+      "senderName": "Você"
+    },
+    {
+      "id": "log-1788967480861-ueur",
+      "timestamp": "2026-09-09T15:24:40.861Z",
+      "direction": "outgoing",
+      "from": "FinAssist Bot",
+      "to": "5511999998888",
+      "text": "╭━━━ 📊 *FINASSIST WHATSAPP* ━━━╮\n│ Olá! Sou seu assistente de finanças.\n│ Registre gastos, consulte saldos e relatórios\n│ direto no seu WhatsApp!\n╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯\n\n📝 *COMANDOS DISPONÍVEIS:*\n\n💸 *.gasto <valor> <descrição>*\n   Registra uma despesa.\n   _Ex: .gasto 45.90 almoço no shopping_\n\n💰 *.receita <valor> <descrição>*\n   Registra um ganho ou salário.\n   _Ex: .receita 2500 salário mensal_\n\n📊 *.saldo*\n   Exibe receitas, despesas e saldo líquido do mês.\n\n📑 *.extrato* [qtd]\n   Lista os lançamentos recentes (padrão: 5).\n   _Ex: .extrato 10_\n\n📈 *.relatorio* [mês]\n   Gera o relatório mensal completo com análise por categoria.\n   _Ex: .relatorio_\n\n🎯 *.meta* ou *.orcamento*\n   Status dos seus limites e orçamentos definidos.\n\n🏷️ *.categorias*\n   Lista todas as categorias disponíveis.\n\n↩️ *.apagar*\n   Desfaz o último lançamento registrado.\n\n────────────────────────────\n🤖 *INTELIGÊNCIA ARTIFICIAL ATIVA:*\nVocê também pode falar naturalmente em mensagem de texto:\n• _\"Gastei 32 reais no Uber hoje no cartão\"_\n• _\"Almoço 28 no débito\"_\n• _\"Recebi 400 do freela no pix\"_\n\nO assistente reconhece o valor e categoria automaticamente!",
+      "commandDetected": ".menu"
+    },
+    {
+      "id": "log-1788967480860-b8pw",
+      "timestamp": "2026-09-09T15:24:40.860Z",
+      "direction": "incoming",
+      "from": "5511999998888",
+      "to": "FinAssist Bot",
+      "text": ".menu",
+      "senderName": "Você"
+    }
+  ]
+}

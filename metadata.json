@@ -1,0 +1,6 @@
+{
+  "name": "Assistente Financeiro WhatsApp",
+  "description": "Gestão financeira, lançamento de boletos e dívidas com comando .boleto, consultoria de Contador IA para priorização de pagamentos e autoatendimento com IA em até 2 contas do WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
