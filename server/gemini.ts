@@ -17,6 +17,42 @@ function getAiClient(): GoogleGenAI | null {
   return aiClient;
 }
 
+const FALLBACK_MODELS = ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.1-flash-lite'];
+
+async function callGeminiWithFallback(
+  ai: GoogleGenAI,
+  params: {
+    contents: any;
+    config?: any;
+  }
+) {
+  let lastError: any = null;
+  for (const model of FALLBACK_MODELS) {
+    try {
+      const response = await ai.models.generateContent({
+        ...params,
+        model
+      });
+      return response;
+    } catch (err: any) {
+      lastError = err;
+      const errMsg = err?.message || String(err);
+      const isQuotaOrRateLimit =
+        errMsg.includes('resource_exhausted') ||
+        errMsg.includes('RESOURCE_EXHAUSTED') ||
+        errMsg.includes('quota') ||
+        err?.status === 429;
+
+      if (isQuotaOrRateLimit) {
+        console.warn(`[Gemini] Cota atingida no modelo ${model}. Tentando modelo alternativo...`);
+        continue;
+      }
+      console.warn(`[Gemini] Erro no modelo ${model}:`, errMsg);
+    }
+  }
+  throw lastError;
+}
+
 export interface ParsedFinancialIntent {
   isFinancial: boolean;
   type: TransactionType;
@@ -61,8 +97,7 @@ Métodos de pagamento aceitos: pix, credit_card, debit_card, cash, transfer, oth
 
 Mensagem do usuário: "${trimmed}"`;
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-3.8-flash',
+      const response = await callGeminiWithFallback(ai, {
         contents: prompt,
         config: {
           responseMimeType: 'application/json',
@@ -190,8 +225,7 @@ Analise o texto do usuário e extraia:
 
 Texto do usuário: "${trimmed}"`;
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-3.8-flash',
+      const response = await callGeminiWithFallback(ai, {
         contents: prompt,
         config: {
           responseMimeType: 'application/json',
@@ -357,8 +391,7 @@ SUAS MISSÕES COMO CONTADOR:
 6. Criar 2 a 4 dicas de negociação bancária e redução de juros ('negotiationTips').
 7. Gerar uma mensagem executiva formatada para WhatsApp ('whatsappFormattedAdvice') com negrito, emojis profissionais, ranking claro e tom de consultor experiente.`;
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-3.8-flash',
+      const response = await callGeminiWithFallback(ai, {
         contents: prompt,
         config: {
           responseMimeType: 'application/json',
@@ -596,8 +629,7 @@ Extraia todos os dados disponíveis:
 9. Status da transação (ex: "Concluído com sucesso", "Liquidado", "Agendado", "Pendente").
 10. Resumo amigável em 1 ou 2 frases curtas.`;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.8-flash',
+    const response = await callGeminiWithFallback(ai, {
       contents: {
         parts: [
           {
@@ -688,8 +720,7 @@ export async function generateAutoResponderReply(
 
     const fullInstruction = `${systemPrompt}\n\n${contextAddition}\nLembre-se de formatar a resposta para o WhatsApp (use *negrito* nos pontos chave, emojis adequados e quebras de linha limpas).`;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.8-flash',
+    const response = await callGeminiWithFallback(ai, {
       contents: userMessage || 'Enviou uma mensagem.',
       config: {
         systemInstruction: fullInstruction,

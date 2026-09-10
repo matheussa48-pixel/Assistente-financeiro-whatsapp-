@@ -654,7 +654,13 @@ class BaileysMultiManager {
     }
   }
 
-  async requestPairingCode(phone: string, id: WhatsAppInstanceId = '1'): Promise<string> {
+  async requestPairingCode(phone: string, id: WhatsAppInstanceId = '1'): Promise<{
+    pairingCode: string;
+    rawCode: string;
+    phone: string;
+    alternativePhone?: string;
+    note?: string;
+  }> {
     return this.getInstance(id).requestPairingCode(phone);
   }
 

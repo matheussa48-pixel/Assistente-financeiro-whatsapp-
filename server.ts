@@ -69,8 +69,15 @@ async function startServer() {
         return res.status(400).json({ error: 'Número de telefone é obrigatório' });
       }
       const instId = (instanceId === '2' ? '2' : '1') as '1' | '2';
-      const code = await baileysManager.requestPairingCode(phone, instId);
-      res.json({ success: true, pairingCode: code, instanceId: instId });
+      const result = await baileysManager.requestPairingCode(phone, instId);
+      res.json({
+        success: true,
+        pairingCode: typeof result === 'string' ? result : result.pairingCode,
+        rawCode: typeof result === 'object' ? result.rawCode : undefined,
+        alternativePhone: typeof result === 'object' ? result.alternativePhone : undefined,
+        note: typeof result === 'object' ? result.note : undefined,
+        instanceId: instId
+      });
     } catch (err: any) {
       res.status(500).json({ error: err?.message || 'Erro ao gerar código de pareamento' });
     }
